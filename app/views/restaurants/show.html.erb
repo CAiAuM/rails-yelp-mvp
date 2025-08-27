@@ -1,0 +1,16 @@
+<div class="conatiner flex-column p-5">
+  <div class="d-flex align-items-between">
+    <h2><%= @restaurant.name %></h2>
+    <%= link_to "Back", restaurants_path, class: "btn btn-primary" %>
+  </div>
+  <p><%= @restaurant.address %></p>
+  <p><%= @restaurant.phone_number %></p>
+  <p><%= @restaurant.category %></p>
+      <h3>Reviews</h3>
+    <ul class="list-unstyled">
+      <% @restaurant.reviews.each do |review| %>
+        <li> <%= review.content %> (Rating: <%= review.rating %>)</li>
+      <% end %>
+    </ul>
+    <%= render "reviews/form", review: @review %>
+</div>

@@ -1,0 +1,11 @@
+<div class="conatiner flex-column p-3">
+  <div>
+    <h1>Restaurants</h1>
+    <ul class="list-unstyled">
+      <% @restaurants.each do |restaurant| %>
+        <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+      <% end %>
+    </ul>
+    <%= link_to "New restaurant", new_restaurant_path, class: "btn btn-primary"  %>
+  </div>
+</div>

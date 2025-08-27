@@ -1,0 +1,9 @@
+<div class="col-4 p-2">
+  <%= simple_form_for [@restaurant, @review] do |f| %>
+    <%= f.input :content %>
+    <%= f.input :rating, as: :integer %>
+    <div class="d-grid">
+      <%= f.submit "Create Review", class: 'btn btn-success'%>
+    </div>
+  <% end %>
+</div>
